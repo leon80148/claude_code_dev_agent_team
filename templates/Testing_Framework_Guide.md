@@ -20,8 +20,8 @@
 ### 必備工具
 - **E2E 測試**：Playwright（首選）、Cypress
 - **API 測試**：REST Client、Playwright Request
-- **CI/CD**：GitHub Actions
 - **問題追蹤**：GitHub Issues
+- **報告工具**：Playwright HTML Reporter
 
 ### 選用工具
 - **性能測試**：Lighthouse、K6
@@ -161,32 +161,27 @@ test('頁面視覺檢查', async ({ page }) => {
 });
 ```
 
-## 🚀 CI/CD 整合範例
+## 🚀 測試執行指南
 
-### GitHub Actions 最小配置
-```yaml
-# .github/workflows/tests.yml
-name: Tests
-on: [push, pull_request]
+### 本地執行測試
+```bash
+# 安裝依賴
+npm install
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npx playwright test
-      
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
+# 安裝瀏覽器
+npx playwright install
+
+# 執行所有測試
+npx playwright test
+
+# 執行特定測試
+npx playwright test tests/login.spec.ts
+
+# 執行測試並生成報告
+npx playwright test --reporter=html
+
+# 查看測試報告
+npx playwright show-report
 ```
 
 ## 🔧 常見問題速解
@@ -234,7 +229,7 @@ test.beforeEach(async ({ page }) => {
 - [ ] E2E 測試覆蓋率 ≥ 80%
 - [ ] API 測試覆蓋率 ≥ 90%
 - [ ] 測試執行時間 ≤ 10分鐘
-- [ ] CI/CD 整合正常
+- [ ] 測試報告生成正常
 
 ### 維護檢查
 - [ ] 測試失敗時易於除錯
@@ -248,7 +243,7 @@ test.beforeEach(async ({ page }) => {
 1. 設置 Playwright 環境
 2. 創建第一個 E2E 測試
 3. 建立 Page Object 基礎架構
-4. 配置 CI/CD 基本流程
+4. 配置測試報告生成
 
 ### 第二週：核心測試
 1. 實現關鍵用戶路徑測試

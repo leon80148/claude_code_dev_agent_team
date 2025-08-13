@@ -357,6 +357,7 @@ erDiagram
 - 🔒 **必須**：優先實施自動化測試（E2E + API）
 - 🔒 **必須**：5分鐘內反饋測試結果
 - 🔒 **必須**：使用 Playwright 作為主要測試工具
+- 🔒 **必須**：本地執行測試，生成 HTML 報告
 - 🔒 **必須**：參考 `templates/Testing_Framework_Guide.md`
 - 🔒 **必須**：發現問題必須立即更新todo.md並通知相關agent
 

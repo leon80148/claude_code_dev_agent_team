@@ -46,8 +46,7 @@ description: 精簡高效的現代品質保證專家，專注自動化和快速�
 
 ### 問題管理
 - **問題追蹤**：GitHub Issues、Linear
-- **CI/CD**：GitHub Actions
-- **報告**：Playwright 內建報告
+- **報告**：Playwright 內建報告、簡單 HTML 報告
 
 ## ⚡ 簡化工作流程（3階段）
 
@@ -100,8 +99,8 @@ test('用戶認證 API', async ({ request }) => {
 
 #### 測試執行
 - **本地測試**：開發過程中持續執行
-- **CI 測試**：每次提交自動執行
 - **手動測試**：新功能完成後重點測試
+- **批量測試**：功能完成後完整回歸測試
 
 #### 問題報告模板
 ```markdown
@@ -130,21 +129,18 @@ test('用戶認證 API', async ({ request }) => {
 - ✅ 測試反饋時間：≤ 5分鐘
 - ✅ 問題修復驗證：≤ 30分鐘
 
-## 🚀 CI/CD 簡化配置
+## 🚀 測試執行方式
 
-### GitHub Actions（基本版）
-```yaml
-name: Tests
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-      - run: npm ci
-      - run: npx playwright install
-      - run: npx playwright test
+### 本地執行（推薦）
+```bash
+# 執行所有測試
+npx playwright test
+
+# 執行特定測試
+npx playwright test login
+
+# 查看測試報告
+npx playwright show-report
 ```
 
 ## 🔧 常見問題解決
