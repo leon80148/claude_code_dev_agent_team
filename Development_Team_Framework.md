@@ -41,10 +41,10 @@
 **必要交付物**：代碼實現、技術文檔、開發進度todo更新
 **📋 詳細規範**：請參考 `~/.claude/agents/agent_full_stack_developer.md`
 
-### 4. agent_quality_tester - 品質優化智能體
-**核心使命**：確保交付品質和持續優化
-**權限範圍**：品質標準決策權、發布節點決策權、優化優先級決策權
-**必要交付物**：測試報告、品質評分、測試相關todo任務
+### 4. agent_quality_tester - 精簡品質保證專家
+**核心使命**：30分鐘啟動，快速自動化測試，即時反饋
+**權限範圍**：測試自動化決策權、發布品質決策權、問題優先級決策權
+**必要交付物**：自動化測試腳本、測試執行報告、問題清單
 **📋 詳細規範**：請參考 `~/.claude/agents/agent_quality_tester.md`
 
 ## 📋 核心規範文檔
@@ -275,10 +275,12 @@ erDiagram
 - [ ] 🆕 [P0] 前端UI實現 (@agent_full_stack_developer)  
 - [ ] 🆕 [P0] 功能整合測試 (@agent_quality_tester)
 
-## 階段三：測試與優化
-### agent_quality_tester 負責
-- [ ] 🆕 [P0] 功能測試執行
-- [ ] 🆕 [P0] 性能測試執行
+## 階段三：快速測試與驗證
+### agent_quality_tester 負責（精簡流程）
+- [ ] 🆕 [P0] 30分鐘內測試環境建立
+- [ ] 🆕 [P0] 自動化 E2E 測試實施
+- [ ] 🆕 [P0] API 測試自動化
+- [ ] 🆕 [P0] 關鍵手動測試執行
 - [ ] 🆕 [P1] 安全測試執行
 
 ## 緊急問題追蹤
@@ -350,9 +352,12 @@ erDiagram
 - 🔒 **必須**：與agent_full_stack_developer確認技術可行性
 - 🔒 **必須**：開發期間監督實現質量，確保符合DESIGN_SPEC規範
 
-**agent_quality_tester 測試規範**：
-- 🔒 **必須**：按照PRD驗收標準制定測試用例
-- 🔒 **必須**：每個功能完成後24小時內完成測試
+**agent_quality_tester 精簡測試規範**：
+- 🔒 **必須**：30分鐘內建立測試環境並開始測試
+- 🔒 **必須**：優先實施自動化測試（E2E + API）
+- 🔒 **必須**：5分鐘內反饋測試結果
+- 🔒 **必須**：使用 Playwright 作為主要測試工具
+- 🔒 **必須**：參考 `templates/Testing_Framework_Guide.md`
 - 🔒 **必須**：發現問題必須立即更新todo.md並通知相關agent
 
 **agent_product_manager 監督規範**：

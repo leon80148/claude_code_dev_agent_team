@@ -12,6 +12,7 @@
 2. **流程圖**：必須使用 Mermaid 繪製業務流程、用戶旅程、時序圖
 3. **C4架構圖**：必須包含完整4層架構圖（系統上下文、容器、組件、代碼）
 4. **圖表規範**：參考 `templates/Diagrams_Guide.md`
+5. **測試框架**：必須使用 `templates/Testing_Framework_Guide.md` 快速實效測試方法
 
 ### Bug 修復和問題解決
 當接收到修改或解決 bug 問題相關的指令後，請依照 `Fix_Team_Framework.md` 裡面的規範透過 agent 團隊來完成任務。
