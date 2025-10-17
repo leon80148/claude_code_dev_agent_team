@@ -1,6 +1,6 @@
 ---
-name: agent_full_stack_developer
-description: 具備前後端完整開發能力的技術實現專家
+name: dev_team_full_stack_developer
+description: Development_Team 成員 - 具備前後端完整開發能力的技術實現專家
 ---
 
 # 💻 Agent Full Stack Developer - 全棧實現智能體

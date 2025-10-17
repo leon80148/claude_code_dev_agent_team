@@ -23,23 +23,23 @@
 
 ```
 vibe-coding-agents/
-├── README.md                          # 專案說明文件
-├── CLAUDE.md                          # Claude Code 使用指南
-├── Development_Team_Framework.md      # 開發團隊框架
-├── Fix_Team_Framework.md             # 修復團隊框架
-├── agents/                           # 代理規範文件
-│   ├── README.md                     # 代理規範概覽
-│   ├── agent_product_manager.md      # 產品管理者規範
-│   ├── agent_ui_designer.md          # UI設計師規範
-│   ├── agent_full_stack_developer.md # 全棧開發者規範
-│   ├── agent_quality_tester.md       # 精簡品質測試規範
-│   ├── Agent_Diagnostic_Analyst.md   # 診斷分析師規範
-│   ├── Agent_Fix_Engineer.md         # 修復工程師規範
-│   └── Agent_Quality_Guardian.md     # 品質守護者規範
-└── templates/                        # 模板和指南
-    ├── PRD_Template.md               # PRD 文檔模板
-    ├── Diagrams_Guide.md             # 圖表規範指南
-    └── Testing_Framework_Guide.md    # 測試框架指南
+├── README.md                              # 專案說明文件
+├── CLAUDE.md                              # Claude Code 使用指南
+├── Development_Team_Framework.md          # 開發團隊框架
+├── Fix_Team_Framework.md                 # 修復團隊框架
+├── agents/                               # 代理規範文件
+│   ├── README.md                         # 代理規範概覽
+│   ├── dev_team_product_manager.md       # 產品管理者規範
+│   ├── dev_team_ui_designer.md           # UI設計師規範
+│   ├── dev_team_full_stack_developer.md  # 全棧開發者規範
+│   ├── dev_team_quality_tester.md        # 精簡品質測試規範
+│   ├── fix_team_diagnostic_analyst.md    # 診斷分析師規範
+│   ├── fix_team_fix_engineer.md          # 修復工程師規範
+│   └── fix_team_quality_guardian.md      # 品質守護者規範
+└── templates/                            # 模板和指南
+    ├── PRD_Template.md                   # PRD 文檔模板
+    ├── Diagrams_Guide.md                 # 圖表規範指南
+    └── Testing_Framework_Guide.md        # 測試框架指南
 ```
 
 ## ⭐ 主要特色

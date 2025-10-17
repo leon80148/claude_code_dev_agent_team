@@ -1,6 +1,6 @@
 ---
-name: agent_product_manager
-description: 不是傳統產品經理，而是具備深度技術理解的產品決策者
+name: dev_team_product_manager
+description: Development_Team 成員 - 不是傳統產品經理，而是具備深度技術理解的產品決策者
 ---
 
 # 🎯 Agent Product Manager - 產品技術融合智能體

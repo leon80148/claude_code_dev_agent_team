@@ -1,6 +1,6 @@
 ---
-name: Agent_Fix_Engineer
-description: 具備解決方案實施和代碼優化能力的修復工程專家
+name: fix_team_fix_engineer
+description: Fix_Team 成員 - 具備解決方案實施和代碼優化能力的修復工程專家
 ---
 
 # 🔧 Agent Fix Engineer - 修復工程智能體

@@ -6,7 +6,7 @@ This framework defines a three-agent collaborative system for automated software
 
 ## Agent Definitions
 
-### Agent_Diagnostic_Analyst
+### fix_team_diagnostic_analyst
 
 **Primary Role**: Problem identification, root cause analysis, and solution recommendation
 
@@ -17,7 +17,7 @@ This framework defines a three-agent collaborative system for automated software
 - Perform root cause analysis
 - Generate diagnostic reports with actionable recommendations
 
-### Agent_Fix_Engineer
+### fix_team_fix_engineer
 
 **Primary Role**: Solution implementation and code optimization
 
@@ -28,7 +28,7 @@ This framework defines a three-agent collaborative system for automated software
 - Ensure code quality and maintainability
 - Document all changes made with detailed impact analysis
 
-### Agent_Quality_Guardian
+### fix_team_quality_guardian
 
 **Primary Role**: Quality assurance and risk mitigation
 
@@ -62,7 +62,7 @@ This framework defines a three-agent collaborative system for automated software
 
 **Duration**: 10-30 minutes
 
-**Lead Agent**: Agent_Diagnostic_Analyst
+**Lead Agent**: fix_team_diagnostic_analyst
 
 **Purpose**: Transform vague user reports into precise technical requirements
 
@@ -145,10 +145,10 @@ This framework defines a three-agent collaborative system for automated software
 
 **Duration**: 15-30 minutes
 
-**Lead Agent**: Agent_Diagnostic_Analyst
+**Lead Agent**: fix_team_diagnostic_analyst
 
 ```
-1. Agent_Diagnostic_Analyst receives clarified problem specification
+1. fix_team_diagnostic_analyst receives clarified problem specification
 2. Collects all relevant technical data (logs, metrics, system data)
 3. Performs initial classification:
    - P0: System down, data loss risk
@@ -167,7 +167,7 @@ This framework defines a three-agent collaborative system for automated software
   "type": "functionality",
   "initialAssessment": "Database connection timeout",
   "affectedComponents": ["auth", "user-service"],
-  "requiredAgents": ["Agent_Fix_Engineer", "Agent_Quality_Guardian"]
+  "requiredAgents": ["fix_team_fix_engineer", "fix_team_quality_guardian"]
 }
 ```
 
@@ -175,20 +175,20 @@ This framework defines a three-agent collaborative system for automated software
 
 **Duration**: 30-60 minutes
 
-**Lead Agent**: Agent_Diagnostic_Analyst  
-**Supporting Agent**: Agent_Fix_Engineer (consultation)
+**Lead Agent**: fix_team_diagnostic_analyst  
+**Supporting Agent**: fix_team_fix_engineer (consultation)
 
 ```
-1. Agent_Diagnostic_Analyst performs deep analysis
+1. fix_team_diagnostic_analyst performs deep analysis
 2. Identifies exact code locations and dependencies
-3. Consults Agent_Fix_Engineer for technical feasibility
+3. Consults fix_team_fix_engineer for technical feasibility
 4. Develops 2-3 solution options with trade-offs
 5. Produces comprehensive diagnostic report
 ```
 
 **Collaboration Protocol**:
-- Agent_Diagnostic_Analyst shares preliminary findings
-- Agent_Fix_Engineer validates technical assumptions
+- fix_team_diagnostic_analyst shares preliminary findings
+- fix_team_fix_engineer validates technical assumptions
 - Both agents agree on viable solutions
 
 **Output**: Detailed diagnostic report with ranked solutions
@@ -200,9 +200,9 @@ This framework defines a three-agent collaborative system for automated software
 **Lead Agent**: All agents participate equally
 
 ```
-1. Agent_Diagnostic_Analyst presents findings
-2. Agent_Fix_Engineer evaluates implementation complexity
-3. Agent_Quality_Guardian assesses risks
+1. fix_team_diagnostic_analyst presents findings
+2. fix_team_fix_engineer evaluates implementation complexity
+3. fix_team_quality_guardian assesses risks
 4. Consensus decision on optimal solution
 5. Define success criteria and test requirements
 ```
@@ -210,22 +210,22 @@ This framework defines a three-agent collaborative system for automated software
 **Decision Matrix**:
 | Factor | Weight | Owner |
 |--------|--------|-------|
-| Technical Complexity | 30% | Agent_Fix_Engineer |
-| Risk Level | 40% | Agent_Quality_Guardian |
-| Time to Fix | 30% | Agent_Diagnostic_Analyst |
+| Technical Complexity | 30% | fix_team_fix_engineer |
+| Risk Level | 40% | fix_team_quality_guardian |
+| Time to Fix | 30% | fix_team_diagnostic_analyst |
 
 ### Phase 4: Precise Implementation with Minimal Impact
 
 **Duration**: 1-4 hours (depending on complexity)
 
-**Lead Agent**: Agent_Fix_Engineer  
-**Supporting Agent**: Agent_Quality_Guardian (real-time review)
+**Lead Agent**: fix_team_fix_engineer  
+**Supporting Agent**: fix_team_quality_guardian (real-time review)
 
 ```
-1. Agent_Fix_Engineer creates feature branch
+1. fix_team_fix_engineer creates feature branch
 2. Identifies exact scope of changes required (minimal impact analysis)
 3. Implements surgical fixes targeting only problematic code
-4. Agent_Quality_Guardian performs concurrent review
+4. fix_team_quality_guardian performs concurrent review
 5. Validates that working code remains untouched
 6. Iterative refinement based on feedback
 7. Final code submission with detailed impact documentation
@@ -239,16 +239,16 @@ This framework defines a three-agent collaborative system for automated software
 - **Change Documentation**: Record precise changes and reasoning
 
 **Collaboration Protocol**:
-- Agent_Fix_Engineer shares progress every 30 minutes
-- Agent_Quality_Guardian provides immediate feedback
+- fix_team_fix_engineer shares progress every 30 minutes
+- fix_team_quality_guardian provides immediate feedback
 - Critical issues trigger immediate consultation
 
 ### Phase 5: Comprehensive Validation
 
 **Duration**: 30-90 minutes
 
-**Lead Agent**: Agent_Quality_Guardian  
-**Supporting Agents**: Agent_Fix_Engineer (clarification), Agent_Diagnostic_Analyst (verification)
+**Lead Agent**: fix_team_quality_guardian  
+**Supporting Agents**: fix_team_fix_engineer (clarification), fix_team_diagnostic_analyst (verification)
 
 ```
 1. Comprehensive code review
@@ -276,8 +276,8 @@ This framework defines a three-agent collaborative system for automated software
 
 **Duration**: 15-30 minutes
 
-**Lead Agent**: Agent_Diagnostic_Analyst  
-**Supporting Agents**: Agent_Quality_Guardian
+**Lead Agent**: fix_team_diagnostic_analyst  
+**Supporting Agents**: fix_team_quality_guardian
 
 ```
 1. Prepare user-friendly demonstration of the fix
@@ -308,13 +308,13 @@ This framework defines a three-agent collaborative system for automated software
 
 **Duration**: 30 minutes
 
-**Lead Agent**: Agent_Quality_Guardian  
+**Lead Agent**: fix_team_quality_guardian  
 **Supporting Agents**: All agents
 
 ```
-1. Agent_Quality_Guardian confirms readiness
-2. Agent_Fix_Engineer prepares deployment package
-3. Agent_Diagnostic_Analyst sets up monitoring
+1. fix_team_quality_guardian confirms readiness
+2. fix_team_fix_engineer prepares deployment package
+3. fix_team_diagnostic_analyst sets up monitoring
 4. All agents review rollback plan
 5. Deployment authorization
 ```
@@ -328,8 +328,8 @@ All agents communicate using standardized message format:
 ```json
 {
   "messageId": "unique-id",
-  "sender": "Agent_Diagnostic_Analyst",
-  "recipients": ["Agent_Fix_Engineer"],
+  "sender": "fix_team_diagnostic_analyst",
+  "recipients": ["fix_team_fix_engineer"],
   "messageType": "REQUEST|RESPONSE|UPDATE|ALERT",
   "priority": "P0|P1|P2|P3",
   "subject": "Brief description",
@@ -358,13 +358,13 @@ All agents communicate using standardized message format:
 
 | Scenario | Primary Handler | Escalation Path |
 |----------|----------------|-----------------|
-| Disagreement on solution | Agent_Quality_Guardian | Human intervention |
-| Fix causes new issues | Agent_Diagnostic_Analyst | Full team review |
-| Time overrun | Agent_Fix_Engineer | Re-prioritization |
-| Unclear requirements | Agent_Diagnostic_Analyst | User clarification |
-| User problem unclear | Agent_Diagnostic_Analyst | Enhanced user interview |
-| Fix doesn't address user need | Agent_Diagnostic_Analyst | Re-clarify user problem |
-| Minimal impact violated | Agent_Quality_Guardian | Re-scope implementation |
+| Disagreement on solution | fix_team_quality_guardian | Human intervention |
+| Fix causes new issues | fix_team_diagnostic_analyst | Full team review |
+| Time overrun | fix_team_fix_engineer | Re-prioritization |
+| Unclear requirements | fix_team_diagnostic_analyst | User clarification |
+| User problem unclear | fix_team_diagnostic_analyst | Enhanced user interview |
+| Fix doesn't address user need | fix_team_diagnostic_analyst | Re-clarify user problem |
+| Minimal impact violated | fix_team_quality_guardian | Re-scope implementation |
 
 ## Operational Procedures
 
@@ -384,9 +384,9 @@ Agenda:
 ### Knowledge Sharing
 
 Each agent maintains and shares:
-- **Agent_Diagnostic_Analyst**: Problem pattern database
-- **Agent_Fix_Engineer**: Solution template library
-- **Agent_Quality_Guardian**: Test case repository
+- **fix_team_diagnostic_analyst**: Problem pattern database
+- **fix_team_fix_engineer**: Solution template library
+- **fix_team_quality_guardian**: Test case repository
 
 ### Performance Metrics
 
@@ -396,9 +396,9 @@ Each agent maintains and shares:
 - Issue Recurrence Rate
 
 **Individual Agent Metrics**:
-- Agent_Diagnostic_Analyst: Diagnosis accuracy
-- Agent_Fix_Engineer: Code quality score
-- Agent_Quality_Guardian: Escaped defect rate
+- fix_team_diagnostic_analyst: Diagnosis accuracy
+- fix_team_fix_engineer: Code quality score
+- fix_team_quality_guardian: Escaped defect rate
 
 ## Emergency Protocols
 
@@ -416,9 +416,9 @@ Each agent maintains and shares:
 
 ```
 Trigger: Fix causes production issues
-1. Agent_Quality_Guardian initiates rollback
-2. Agent_Fix_Engineer executes rollback
-3. Agent_Diagnostic_Analyst monitors impact
+1. fix_team_quality_guardian initiates rollback
+2. fix_team_fix_engineer executes rollback
+3. fix_team_diagnostic_analyst monitors impact
 4. Team retrospective on failure
 ```
 

@@ -1,0 +1,477 @@
+# 🚀 Claude Code 開發指南 - SDD + To-Do List 框架
+
+## 📍 相關文件連結（請在此填入你的專案文件路徑）
+
+### 核心文件
+- **專案配置文件**：`CLAUDE.md` → 【填入路徑，例如：./CLAUDE.md】
+- **任務追蹤清單**：`todo.md` → 【填入路徑，例如：./todo.md】
+
+### 需求與設計文件
+- **產品需求文檔**：`PRD.md` → 【填入路徑，例如：./docs/PRD.md】
+- **設計規範文檔**：`DESIGN_SPEC.md` → 【填入路徑，例如：./docs/DESIGN_SPEC.md】
+
+### 範本文件（參考用）
+- **PRD 範本**：【填入路徑，例如：./templates/PRD_Template.md】
+- **圖表指南**：【填入路徑，例如：./templates/Diagrams_Guide.md】
+- **測試框架指南**：【填入路徑，例如：./templates/Testing_Framework_Guide.md】
+
+### Agent 規範文件
+- **開發團隊框架**：【填入路徑，例如：./Development_Team_Framework.md】
+- **修復團隊框架**：【填入路徑，例如：./Fix_Team_Framework.md】
+- **Product Manager**：【填入路徑，例如：./agents/dev_team_product_manager.md】
+- **UI Designer**：【填入路徑，例如：./agents/dev_team_ui_designer.md】
+- **Full Stack Developer**：【填入路徑，例如：./agents/dev_team_full_stack_developer.md】
+- **Quality Tester**：【填入路徑，例如：./agents/dev_team_quality_tester.md】
+- **Diagnostic Analyst**：【填入路徑，例如：./agents/fix_team_diagnostic_analyst.md】
+- **Fix Engineer**：【填入路徑，例如：./agents/fix_team_fix_engineer.md】
+- **Quality Guardian**：【填入路徑，例如：./agents/fix_team_quality_guardian.md】
+
+---
+
+## 📖 什麼是 SDD + To-Do List 框架？
+
+這是一個專為**非專業程序員**設計的開發框架，讓你可以透過 AI（Claude Code）自主完成軟體開發，即使不懂程式也能使用。
+
+**核心概念**：
+- **規範驅動開發（SDD）**：用清楚的文件告訴 AI 要做什麼
+- **To-Do List 追蹤**：AI 自動建立和更新任務清單
+- **Agent 團隊協作**：不同專長的 AI agent 分工完成任務
+
+---
+
+## 🎯 文件架構說明
+
+### 必備文件（3個）
+
+#### 1. CLAUDE.md - AI 工作指南
+**作用**：告訴 Claude 如何工作
+**位置**：專案根目錄
+**內容**：
+- 專案基本資訊
+- 文件路徑規範
+- AI 工作規則
+- 開發規範
+
+#### 2. todo.md - 任務追蹤清單
+**作用**：記錄所有開發任務和進度
+**位置**：專案根目錄（建議）
+**格式**：
+```markdown
+## 🔄 進行中（限一個）
+- [ ] [P0] 任務描述 (@agent名稱)
+
+## 📋 待辦任務
+- [ ] [P1] 任務描述 (@agent名稱)
+
+## ✅ 已完成
+- [x] [P0] 任務描述 (@agent名稱) - 完成日期
+```
+
+#### 3. docs/PRD.md - 產品需求文檔
+**作用**：記錄「要做什麼功能」
+**位置**：docs/ 目錄
+**必須包含**：
+- 功能清單
+- 使用者操作流程
+- 驗收標準
+
+### 可選文件（視需求）
+
+#### docs/DESIGN_SPEC.md - 設計規範
+**作用**：記錄「介面長什麼樣子」
+**何時需要**：有使用者介面的專案
+
+---
+
+## 🤖 Claude 的工作流程
+
+### 標準作業程序（SOP）
+
+#### 步驟 1：接收任務
+```
+使用者：「請實作使用者登入功能」
+```
+
+#### 步驟 2：自動檢查文件
+Claude 會自動執行：
+```
+1. Read todo.md → 確認此任務是否在清單中
+2. Read docs/PRD.md → 了解「使用者登入」的需求細節
+3. Read docs/DESIGN_SPEC.md → （如需要）了解登入頁面設計
+```
+
+#### 步驟 3：更新任務狀態
+```
+TodoWrite：將「實作使用者登入功能」標記為「🔄 進行中」
+```
+
+#### 步驟 4：執行開發
+```
+根據 PRD 和 DESIGN_SPEC 進行開發
+```
+
+#### 步驟 5：完成後更新
+```
+TodoWrite：將任務標記為「✅ 已完成」
+回報完成情況
+```
+
+---
+
+## 🚀 Agent 使用指南（白話文版）
+
+### 開發新功能流程
+
+#### 1️⃣ 產品經理 (dev_team_product_manager)
+**何時使用**：剛開始有新想法，需要整理需求
+
+**召喚方式**：
+```
+請扮演 dev_team_product_manager 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+幫我分析以下需求並建立開發計劃：
+
+【用白話文描述你的想法，例如：
+我想做一個線上記帳本，使用者可以記錄收入和支出，
+還能看到每月的統計圖表】
+```
+
+**會產出**：
+- docs/PRD.md（需求文檔）
+- todo.md（任務清單）
+- 技術建議
+
+---
+
+#### 2️⃣ UI 設計師 (dev_team_ui_designer)
+**何時使用**：需要設計網頁或 APP 的外觀
+
+**召喚方式**：
+```
+請扮演 dev_team_ui_designer 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+根據 PRD 設計以下功能的介面：
+
+【功能名稱，例如：記帳輸入頁面】
+```
+
+**會產出**：
+- docs/DESIGN_SPEC.md（設計規範）
+- 頁面佈局描述
+- 顏色、字體建議
+
+---
+
+#### 3️⃣ 全端工程師 (dev_team_full_stack_developer)
+**何時使用**：要開始寫程式
+
+**召喚方式**：
+```
+請扮演 dev_team_full_stack_developer 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+根據 PRD 和 DESIGN_SPEC 實作以下功能：
+
+【功能描述】
+```
+
+**會產出**：
+- 完整的程式碼
+- 中文註解
+- 實作說明
+
+---
+
+#### 4️⃣ 測試工程師 (dev_team_quality_tester)
+**何時使用**：功能寫好了，要測試
+
+**召喚方式**：
+```
+請扮演 dev_team_quality_tester 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+測試以下功能：
+
+【功能名稱】
+```
+
+**會產出**：
+- 測試報告
+- 發現的問題
+- 修復建議
+
+---
+
+### 修復問題流程
+
+#### 1️⃣ 診斷分析師 (fix_team_diagnostic_analyst)
+**何時使用**：遇到錯誤或問題
+
+**召喚方式**：
+```
+請扮演 fix_team_diagnostic_analyst 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+幫我分析以下問題：
+
+【描述問題，例如：點擊「新增記帳」按鈕後畫面沒反應】
+```
+
+**會產出**：
+- 問題根源分析
+- 可能原因
+- 修復建議
+
+---
+
+#### 2️⃣ 修復工程師 (fix_team_fix_engineer)
+**何時使用**：知道問題原因，要修復
+
+**召喚方式**：
+```
+請扮演 fix_team_fix_engineer 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+根據診斷報告修復問題：
+
+【問題描述】
+```
+
+**會產出**：
+- 修復後的程式碼
+- 修改說明
+
+---
+
+#### 3️⃣ 品質守護者 (fix_team_quality_guardian)
+**何時使用**：修復後要驗證
+
+**召喚方式**：
+```
+請扮演 fix_team_quality_guardian 的角色，
+參考 【填入 agent 文件路徑】 的規範，
+驗證以下問題是否已修復：
+
+【問題描述】
+```
+
+**會產出**：
+- 驗證報告
+- 確認結果
+
+---
+
+## 💡 實際使用範例
+
+### 範例：開發一個待辦事項網站
+
+#### 第 1 天：需求分析
+```
+我：「請扮演 dev_team_product_manager，分析需求：
+我想做一個待辦事項網站，使用者可以新增、編輯、刪除任務」
+
+↓ Claude 產出 PRD.md 和 todo.md
+```
+
+#### 第 2 天：介面設計
+```
+我：「請扮演 dev_team_ui_designer，設計待辦事項的介面」
+
+↓ Claude 產出 DESIGN_SPEC.md
+```
+
+#### 第 3-5 天：程式開發
+```
+我：「請扮演 dev_team_full_stack_developer，實作新增任務功能」
+
+↓ Claude 開發程式碼
+
+我：「請實作編輯任務功能」
+我：「請實作刪除任務功能」
+```
+
+#### 第 6 天：測試
+```
+我：「請扮演 dev_team_quality_tester，測試所有功能」
+
+↓ Claude 執行測試並回報結果
+```
+
+#### 如果有問題：
+```
+我：「請扮演 fix_team_diagnostic_analyst，分析為什麼刪除功能不正常」
+
+↓ Claude 分析問題
+
+我：「請扮演 fix_team_fix_engineer，修復這個問題」
+
+↓ Claude 修復程式碼
+
+我：「請扮演 fix_team_quality_guardian，驗證問題是否解決」
+
+↓ Claude 驗證並確認
+```
+
+---
+
+## ⚙️ CLAUDE.md 設定範本
+
+當你開始新專案時，在專案根目錄創建 CLAUDE.md，內容參考：
+
+```markdown
+# 專案：【填入專案名稱】
+
+## 📍 文件位置規範
+- PRD 文檔：`docs/PRD.md`
+- 設計規範：`docs/DESIGN_SPEC.md`
+- 任務清單：`todo.md`
+
+## 🎯 專案目標
+【用白話文描述專案要做什麼】
+
+## 🤖 Claude 工作規則
+
+### 開始任務前：
+1. ✅ 讀取 todo.md 確認當前任務
+2. ✅ 讀取 docs/PRD.md 了解需求
+3. ✅ 使用 TodoWrite 標記任務為「進行中」
+
+### 工作時：
+- 一次只做一個任務
+- 所有註解用中文
+- 每完成一步就更新 todo.md
+
+### 完成後：
+1. ✅ TodoWrite 標記任務為「已完成」
+2. ✅ 告知完成內容
+
+## 📋 開發規範
+- 檔案命名：使用有意義的名稱，小寫+底線
+- 程式碼：每個函數都要有中文註解
+- 錯誤處理：要有清楚的錯誤訊息
+
+## 🔗 相關文件
+- 開發團隊框架：【填入路徑】
+- 修復團隊框架：【填入路徑】
+- Agent 規範：【填入 agents/ 目錄路徑】
+```
+
+---
+
+## 📋 todo.md 格式範本
+
+```markdown
+# 專案任務清單
+
+## 🔄 進行中（只能有一個）
+- [ ]
+
+## 📋 待辦任務
+
+### P0 - 最高優先（必須完成）
+- [ ]
+
+### P1 - 高優先（盡快完成）
+- [ ]
+
+### P2 - 中優先（有空再做）
+- [ ]
+
+## ✅ 已完成
+- [x]
+
+## ⚠️ 問題追蹤
+- [ ]
+
+## 📝 更新記錄
+- YYYY-MM-DD：
+```
+
+---
+
+## 🎯 快速開始步驟
+
+### 步驟 1：準備文件結構
+```bash
+# 創建必要目錄和文件
+mkdir docs
+touch CLAUDE.md
+touch todo.md
+touch docs/PRD.md
+touch docs/DESIGN_SPEC.md
+```
+
+### 步驟 2：填寫文件連結
+1. 打開本文件（pre-claude.md）頂部的「相關文件連結」區域
+2. 填入你的專案中各文件的實際路徑
+
+### 步驟 3：設定 CLAUDE.md
+1. 複製本文件的「CLAUDE.md 設定範本」
+2. 貼到專案的 CLAUDE.md 中
+3. 填寫專案名稱和目標
+
+### 步驟 4：開始第一個任務
+```
+請扮演 dev_team_product_manager，
+分析需求：【描述你想做的專案】
+```
+
+### 步驟 5：跟著 todo.md 執行
+按照 Claude 建立的 todo.md 逐步完成開發
+
+---
+
+## ❓ 常見問題（FAQ）
+
+### Q1：我完全不懂程式，真的能用嗎？
+**A**：可以！你只需要：
+- 用白話文說明想做什麼
+- 召喚對應的 agent
+- 確認結果是否符合預期
+
+### Q2：一定要建立所有文件嗎？
+**A**：最少需要：
+- CLAUDE.md（AI 工作指南）
+- todo.md（任務清單）
+- docs/PRD.md（需求文檔）
+
+其他可視專案複雜度決定是否需要。
+
+### Q3：如果 Claude 做錯了怎麼辦？
+**A**：
+1. 清楚告訴它哪裡不對
+2. 用白話文說明你期望的結果
+3. 可召喚 fix_team 來修復
+
+### Q4：todo.md 需要我自己建立嗎？
+**A**：不用！當你召喚 dev_team_product_manager 時，
+它會自動建立 todo.md。
+
+### Q5：可以中途修改需求嗎？
+**A**：可以！
+1. 告訴 Claude 你要修改什麼
+2. 讓它更新 docs/PRD.md
+3. 它會自動調整 todo.md
+
+---
+
+## 📌 重要提醒
+
+### ✅ 一定要做：
+- 每次開始前讓 Claude 確認 todo.md
+- 保持文件路徑一致
+- 用白話文描述需求
+
+### ❌ 不要做：
+- 不要一次給太多任務
+- 不要跳過測試步驟
+- 不要忘記更新 todo.md
+
+---
+
+## 🔗 更多資源
+
+- 開發團隊詳細規範：查看 Development_Team_Framework.md
+- 修復團隊詳細規範：查看 Fix_Team_Framework.md
+- PRD 範本：查看 templates/PRD_Template.md
+- 各 Agent 詳細能力：查看 agents/ 目錄
+
+---
+
+**祝你開發順利！🚀**

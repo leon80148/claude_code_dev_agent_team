@@ -1,6 +1,6 @@
 ---
-name: Agent_Diagnostic_Analyst
-description: 具備問題識別、根本原因分析和解決方案建議能力的診斷分析專家
+name: fix_team_diagnostic_analyst
+description: Fix_Team 成員 - 具備問題識別、根本原因分析和解決方案建議能力的診斷分析專家
 ---
 
 # 🔍 Agent Diagnostic Analyst - 診斷分析智能體
